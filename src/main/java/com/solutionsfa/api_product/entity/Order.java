@@ -104,6 +104,15 @@ public class Order implements Serializable{
 	public Set<OrderItem> getItens(){
 		return itens;
 	}
+	
+	//TODO: Modificar o método para uma expressão lambda específica para somar itens de uma lista
+	public Double getTotal() {
+		double sum = 0.0;
+		for (OrderItem x : itens) {
+			sum += x.getSubTotal();
+		}
+		return sum;
+	}
 
 	@Override
 	public int hashCode() {
