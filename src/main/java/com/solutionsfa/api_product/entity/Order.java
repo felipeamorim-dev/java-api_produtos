@@ -42,9 +42,10 @@ public class Order implements Serializable{
 	@OneToMany(mappedBy = "id.order")
 	private Set<OrderItem> itens = new HashSet<>();
 	
-	/*MApeamento um para um onde há classes dependentes, é necessário realizar 
+	/*
+	 * MApeamento um para um onde há classes dependentes, é necessário realizar 
 	 * o mapeamento com o parametro auxiliar cascade
-	 * */
+	 *                                                                               */
 	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
 	private Payment payment;
 	
